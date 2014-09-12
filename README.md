@@ -1,0 +1,4 @@
+GIRAF
+=====
+
+Influenza reassortment detection
