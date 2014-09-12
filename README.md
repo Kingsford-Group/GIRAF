@@ -5,17 +5,17 @@ GIRAF is a command-line utility that will read collections of trees to attempt
 to find influenza reassortments.
 
 Contents
-    1) INSTALLATION:
-    2) TESTING INSTALLATION
-    3) TYPICAL USAGE
-    4) GIRAF INPUT FILES
-    5) OPTIONS:
-    6) COMPILING, IF NECESSARY
-    7) ADVANCED MODE
+1. INSTALLATION:
+2. TESTING INSTALLATION
+3. TYPICAL USAGE
+4. GIRAF INPUT FILES
+5. OPTIONS:
+6. COMPILING, IF NECESSARY
+7. ADVANCED MODE
 
 
 1) INSTALLATION:
-================
+----------------
 
 The heart of GIRAF is a command line program. Versions of the program for Apple
 Mac, Windows, and Linux are in the bin/ directory of the distributed .zip file.
@@ -25,7 +25,7 @@ it.)
 
 
 2) TESTING INSTALLATION
-=======================
+-----------------------
 
 You can test your installation by running the following commands (of course,
 "giraf" should be replaced by perhaps giraf_mac or giraf_windows, and should
@@ -50,7 +50,7 @@ file "catalog.correct" in the testdata/h5n1-catalog directory.
 
 
 3) TYPICAL USAGE
-================
+----------------
 
 GIRAF requires some way to produce .nex files that contain many trees. The
 easiest way is to use MrBayes. You should install MrBayes and put the "mb"
@@ -99,7 +99,7 @@ advanced mode (see below)).
 
 
 4) GIRAF INPUT FILES
-====================
+--------------------
 
 In typical usage, the giraf command is "giraf in.giraf". Here, "in.giraf" is
 the name of a file that contains the information about the segments. The format
@@ -121,7 +121,7 @@ required format. An example file is:
 
 
 5) OPTIONS:
-===========
+-----------
 
 Typical Options:
 
@@ -180,7 +180,7 @@ to use these options.
         All new work should be done with GIRAF 1.0 or later.
 
 6) COMPILING, IF NECESSARY
-==========================
+--------------------------
 
 If you change GIRAF, or want to get it to work on a different type of machine,
 GIRAF must be compiled, and probably requires the GNU g++ compiler.  To compile
