@@ -5,6 +5,7 @@ GIRAF is a command-line utility that will read collections of trees to attempt
 to find influenza reassortments.
 
 Contents
+
 1. INSTALLATION:
 2. TESTING INSTALLATION
 3. TYPICAL USAGE
