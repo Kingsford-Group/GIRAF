@@ -1,0 +1,3 @@
+# a simple input file to the giraf command
+left left.nex.run1.t left.nex.run2.t
+right right.nex.run1.t right.nex.run2.t
