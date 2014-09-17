@@ -1,4 +1,5 @@
 #include "splits.h"
+#include <algorithm>
 
 
 string

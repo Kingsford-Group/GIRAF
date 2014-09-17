@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "tree.h"
 #include "splits.h"
 #include "options.h"

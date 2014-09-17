@@ -3,6 +3,8 @@
 #include <fstream>
 #include <sstream>
 #include <cmath>
+#include <cstdlib>
+#include <cstring>
 #include "util.h"
 #include "catalog.h"
 #include "timer.h"

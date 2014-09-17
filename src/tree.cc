@@ -1,4 +1,5 @@
 #include "tree.h"
+#include <algorithm>
 
 //=========================================================================
 // Tree Output
@@ -396,7 +397,7 @@ RemoveNEXComments(const string & line)
     std::ostringstream oss;
 
     // for every char in the input string
-    for (int i = 0; i < line.length(); i++) {
+    for (std::size_t i = 0; i < line.length(); i++) {
         // if this is a start of a comment
         if (line[i] == '[') {
             while (line[i] != ']') i++;  // skip chars until we get past the comment

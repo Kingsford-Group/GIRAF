@@ -1,6 +1,7 @@
 #include <cmath>
 #include <list>
 #include <map>
+#include <algorithm>
 #include "tree.h"
 #include "splits.h"
 #include "dist.h"
