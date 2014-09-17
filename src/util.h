@@ -39,7 +39,7 @@ string
 TrimRight(const string & str)
 {
     string tmp = str;
-    return tmp.erase(tmp.find_last_not_of(" ") + 1);
+    return tmp.erase(tmp.find_last_not_of(" \t") + 1);
 }
 
 inline
@@ -47,7 +47,7 @@ string
 TrimLeft(const string & str)
 {
     string tmp = str;
-    return tmp.erase(0, tmp.find_first_not_of(" "));
+    return tmp.erase(0, tmp.find_first_not_of(" \t"));
 }
 
 inline

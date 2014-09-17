@@ -83,7 +83,11 @@ main_mcmc_split_info(int argc, char *argv[])
 
     for (int i = first_file_index+1; i < argc; i++)
     {
+        cout << PROG_NAME ": Reading " << argv[i] << " ..." << endl;
         ifstream nexus(argv[i]);
+        if(!nexus) {
+            DIE("Couldn't read tree file.");
+        }
 
         NodeNameMapping leafs, *ptr;
         ReadNexTranslate(nexus, &leafs);
@@ -109,6 +113,7 @@ main_mcmc_split_info(int argc, char *argv[])
     // find all the splits
     SplitDatabase splits;
     AllSplits(trees, splits);
+    cout << PROG_NAME ": Extracted " << splits.size() << " splits." << endl;
 
     // Remove the splits that don't occur very often
     CullSplits(splits, (int)(trees.size()*cull_opt)); 

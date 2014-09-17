@@ -202,6 +202,7 @@ TranslateLeaves(
         else
         {
             WARN("missing NEXUS translate value for a leaf");
+            cerr << "ID=" << T->id << std::endl;
         }
     }
     else
@@ -290,11 +291,11 @@ ReadLength(istream & in)
 {
   string len_str = "";
   char ch;
-  while(in >> ch && (isdigit(ch) || ch == '-' || ch == '.' || ch == 'e' || ch == '+'))
+  while(in >> ch && (isdigit(ch) || ch == '-' || ch == '.' || ch == 'e' || ch == 'E' || ch == '+'))
   {
     len_str += ch;
   }
-  assert(ch == ')' || ch == ',' || ch == ';' || isspace(ch));
+  assert(ch == ')' || ch == ',' || ch == ';' || ch == '[' || isspace(ch));
   in.unget();
   return (double)atof(len_str.c_str());
 }
@@ -387,6 +388,25 @@ ReadTree(istream & in)
   return P;
 }
 
+// remove things between [] from the line and return a new line
+// with them removed.
+std::string
+RemoveNEXComments(const string & line)
+{
+    std::ostringstream oss;
+
+    // for every char in the input string
+    for (int i = 0; i < line.length(); i++) {
+        // if this is a start of a comment
+        if (line[i] == '[') {
+            while (line[i] != ']') i++;  // skip chars until we get past the comment
+        } else {
+            oss << line[i]; 
+        }
+    }
+    return oss.str();
+}
+
 
 // Read a .nex file that contains a collection of trees
 void
@@ -409,6 +429,8 @@ ReadNexTrees(
             // skip the first burnin trees
             tree_count++;
             if(tree_count <= burnin) continue;
+
+            line = RemoveNEXComments(line);
 
             // find the start of the tree, if it exists
             size_t paren = line.find('(');
